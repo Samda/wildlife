@@ -16,3 +16,8 @@
 //= require bootstrap-sprockets
 //= require wow.js
 //= require_tree .
+
+
+$(document).ready(function(){
+  new WOW().init();
+});
