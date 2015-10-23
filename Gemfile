@@ -33,22 +33,19 @@ gem 'slim'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :test do
-  gem 'rspec-rails', '~> 3.0'
-  gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
-  gem "capybara"
-  gem 'launchy'
-end
 
+#add dependencies for test
 group :development, :test do
-  gem 'annotate'
-  gem "table_print"
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'pry'
+  gem 'pry' #debug code in during project is running
   gem 'pry-remote'
   gem 'pry-nav'
+  gem 'rspec-rails', '~> 3.0' #For testing tools
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem "capybara" #For Behaviors Driven Development
+  gem 'launchy'
 end
 
