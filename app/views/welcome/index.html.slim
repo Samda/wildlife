@@ -24,10 +24,7 @@
             .wow.fadeInUp
               p= truncate(w.description, length: 200)
               p
-                .btn-group
-                  =link_to "Update Info ", edit_wildlife_path(w), class: 'btn btn-xs btn-warning'
-                .btn-group
-                  =link_to "View details »", wildlife_path(w), class: 'btn btn-xs btn-default'
+                =link_to "View details »", wildlife_path(w), class: 'btn btn-xs btn-default'
   .row.page-header
       .col-lg-4.text-center
         img.wow.rollIn.img-circle src="https://pbs.twimg.com/profile_images/594667736938098688/EqeNo-sF_400x400.jpg" width="200" height="200"
