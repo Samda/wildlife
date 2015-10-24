@@ -36,20 +36,26 @@ gem 'simple_form'
 # gem 'capistrano-rails', group: :development
 gem "paperclip", "~> 4.3" #attachment
 
-#add dependencies for test
-group :development, :test do
+group :development do
+  gem "better_errors"
+  gem "slim-rails"
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem "capybara"
+  gem 'launchy'
+  gem 'shoulda'
+end
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'pry' #debug code in during project is running
+  gem 'pry'
   gem 'pry-remote'
   gem 'pry-nav'
-  gem 'rspec-rails', '~> 3.0' #For testing tools
-  gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
-  gem "capybara" #For Behaviors Driven Development
-  gem 'launchy'
-  gem 'slim-rails'
-  gem 'better_errors'
 end
 
