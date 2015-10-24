@@ -19,6 +19,10 @@
 @import "haft-slide";
 @import "animate";
 
+body{
+  margin-top: 50px;
+}
+
 @-webkit-keyframes rollInRight {
   0% { opacity: 0; -webkit-transform: translateX(100%) rotate(120deg); }
   100% { opacity: 1; -webkit-transform: translateX(0px) rotate(0deg); }

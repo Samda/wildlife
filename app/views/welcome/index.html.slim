@@ -1,3 +1,4 @@
+= render "layouts/carousel"
 .jumbotron
   .container
     .row
@@ -7,30 +8,26 @@
         p Most known animal phyla appeared in the fossil record as marine species during the Cambrian explosion, about 542 million years ago. Animals are divided into various sub-groups, some of which are: vertebrates (birds, mammals, amphibians, reptiles, fish); molluscs (clams, oysters, octopuses, squid, snails); arthropods (millipedes, centipedes, insects, spiders, scorpions, crabs, lobsters, shrimp); annelids (earthworms, leeches); sponges; and jellyfish.
 .container
   .row
+
     .col-lg-12
-      h2.page-header Wildlife List
-  .row.page-header
-    .col-lg-4.text-center
-      img.wow.rollIn.img-circle src="https://pbs.twimg.com/profile_images/594667736938098688/EqeNo-sF_400x400.jpg" width="200" height="200"
-      h2 Heading
-      .wow.fadeInUp
-        p Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-        p
-          a.btn.btn-default href="#" role="button"  View details »
-    .col-lg-4.text-center
-      img.wow.fadeInDown.img-circle src="http://shopshipshape.com/wp-content/uploads/2013/06/Tiger-400x400.jpg" width="200" height="200"
-      h2 Heading
-      .wow.fadeInUp
-        p Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
-        p
-          a.btn.btn-default href="#" role="button"  View details »
-    .col-lg-4.text-center
-      img.wow.rollInRight.img-circle src="http://mentoringmoments.org/wp-content/uploads/2011/11/cat1-400x400.png" width="200" height="200"
-      h2 Heading
-      .wow.fadeInUp
-        p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-        p
-          a.btn.btn-default href="#" role="button"  View details »
+
+      h2.page-header
+        Wildlife List
+      =link_to 'Add New', new_wildlife_path
+  - @wilflives.in_groups_of(3) do |w_group|
+    .row.page-header
+      -w_group.each  do |w|
+        -if w.present?
+          .col-lg-4.text-center
+            =image_tag(w.avatar.url, class: 'wow rollIn img-circle', width: "200", height: "200")
+            h2 =w.name
+            .wow.fadeInUp
+              p= truncate(w.description, length: 200)
+              p
+                .btn-group
+                  =link_to "Update Info ", edit_wildlife_path(w), class: 'btn btn-xs btn-warning'
+                .btn-group
+                  =link_to "View details »", wildlife_path(w), class: 'btn btn-xs btn-default'
   .row.page-header
       .col-lg-4.text-center
         img.wow.rollIn.img-circle src="https://pbs.twimg.com/profile_images/594667736938098688/EqeNo-sF_400x400.jpg" width="200" height="200"

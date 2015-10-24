@@ -1,0 +1,16 @@
+.row
+    =simple_form_for @wildlife do |f|
+      .col-md-3
+        =f.input :name
+      .col-md-3
+        =f.input :lifespan
+      .col-md-3
+        =f.input :mass
+      .col-md-3
+        =f.input :speed
+      .col-md-12
+        =f.input :description, as: :text, input_html: { rows: 5 }
+      .col-md-12
+        =f.input :avatar, as: :file
+      .col-md-12
+        =f.submit class: "btn btn-primary"

@@ -17,8 +17,17 @@ ActiveRecord::Schema.define(version: 20151023100023) do
   enable_extension "plpgsql"
 
   create_table "wildlives", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "description"
+    t.string   "lifespan"
+    t.string   "mass"
+    t.string   "speed"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
 end

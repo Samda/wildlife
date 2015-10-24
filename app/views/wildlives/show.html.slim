@@ -1,0 +1,26 @@
+.container
+  .row
+    .col-md-12
+      h2.page-header= @wildlife.name
+  .row
+    .col-md-4
+      =image_tag(@wildlife.avatar.url, class: 'img-thumbnail')
+      p
+        .btn-group
+          =link_to "Update Info ", edit_wildlife_path(@wildlife), class: 'btn btn-xs btn-warning'
+        .btn-group
+          =link_to "Back to list", root_path, class: 'btn btn-xs btn-info'
+    .col-md-6
+
+      table.table
+        tr
+          td Lifespan
+          td =@wildlife.lifespan
+        tr
+          td Mass
+          td =@wildlife.mass
+        tr
+          td Speed
+          td =@wildlife.speed
+      p.page-header Basic info  
+      =@wildlife.description
